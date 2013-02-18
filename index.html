@@ -1,0 +1,56 @@
+<!DOCTYLE>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>前端测试</title>
+    <style>
+      *{ margin:0;padding:0;font-size: 12px;font-family: "microsoft yahei";color:#333;}
+      li{ list-style: none;}
+
+      body{ border-top:2px solid #65b5f8;}
+      .f_wrapper{ width:1000px;margin:0 auto; position: relative;padding-top:50px;}
+      .f_bookmarklet{ position: absolute;right:0;top:50px;}
+      .f_bookmarklet a{ display: inline-block;vertical-align: middle;background: #65b5f8;color:#fff;padding:0 10px;height:32px;line-height: 32px;border-radius: 5px;text-decoration: none;margin-top: 10px;}
+      .f_box{ margin-bottom:30px;}
+      .f_box h2{ font-size: 18px;margin-bottom:10px;}
+      .f_box h2 span{ font-size: 12px;margin-left:10px;color:#ccc;font-weight: 400}
+      .f_list{ line-height: 2;padding-left:2em;}
+    </style>
+  </head>
+  <body>
+    <!--f_wrapper-->
+    <div class="f_wrapper">
+      <!--f_bookmarklet-->
+      <div class="f_bookmarklet">
+        <p>限chrome浏览器</p>
+        <a href="javascript:(function(){var _link = document.createElement('link');_link.setAttribute('href','http://debug.xmf2e.com/debug/css/debug.css');_link.setAttribute('rel','stylesheet');_link.setAttribute('type','text/css');if( typeof (_link) != undefined ){document.getElementsByTagName('head')[0].appendChild(_link);}})();">亲，快拖我去书签栏～～</a>
+      </div>
+      <!--/f_bookmarklet-->
+      <!--f_box-->
+      <div class="f_box">
+        <h2>一：前端测试说明<span>版本：130218</span></h2>
+        <ul class="f_list">
+            <li>1）元素含有内联样式：边框为#05c413 2px 虚线</li> 
+            <li>2）元素属性值(alt、title、class、id、href、href="#")为空：边框为#f00 3px 虚线</li> 
+            <li>3）img缺少width、height属性：边框为#00f 5px 虚线</li> 
+            <li>4）img缺少alt：边框为#45d2c0 5px 虚线</li> 
+            <li>5）空元素(常见:div、span、li、p、td、th)：内边距1em,背景颜色为#6854e2</li> 
+            <li>6）放弃的元素属性：边框为#ec62f5 1px 实线</li> 
+            <li>7）放弃元素：边框为红色10px实线</li> 
+        </ul>
+      </div>
+      <!--/f_box-->
+      <!--f_box-->
+      <div class="f_box">
+        <h2>二：手工检测</h2>
+        <ul class="f_list">
+            <li>1）文字截断</li> 
+            <li>2）模块的极限值，如无数据与有数据情况</li> 
+            <li>3）各个浏览器的兼容性，以业务线浏览器比重</li> 
+        </ul>
+      </div>
+      <!--/f_box-->
+    </div>
+    <!--/f_wrapper-->
+  </body>
+</html>
