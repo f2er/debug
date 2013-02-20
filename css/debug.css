@@ -1,26 +1,27 @@
+@charset "utf-8";
 /**
  * Debug CSS by 情封
  * Author: uezheng@gmail.com
- * Version: 0.1
+ * Version: 0.2
  * License: MIT
  */
 
-/* inline style */
+/* 内联样式 */
 *[style]{outline:1px dotted #05c413 !important;}
 
-/* empty attributes */
-*[alt=""],*[title=""],*[class=""],*[id=""],a[href=""],a[href="#"]{outline:3px dotted #f00 !important;}
+/* 空属性值 */
+*[alt=""],*[title=""],*[class=""],*[id=""],a[href=""]{outline:1px dotted #f00 !important;}
 
-/* no width & height */
+/* img没有宽、高属性 */
 img:not([width]):not([height]){outline:5px dotted #00f !important;}
 
-/* no alt */
+/* img没有alt属性 */
 img:not([alt]){outline:5px dotted #45d2c0 !important;}
 
-/* empty elements */
-div:empty,span:empty,li:empty,p:empty,td:empty,th:empty{padding:1em;background-color:#6854e2 !important;}
+/* 空标签 */
+div:empty,span:empty,li:empty,p:empty,td:empty,th:empty{background-color:#6854e2 !important;}
 
-/* obsolete attributes */
+/* 过时的属性 */
 html[version],
 body[alink],body[link],body[text],body[vlink],body[background],body[bgcolor],
 a[rev],a[charset],a[shape],a[coords],
@@ -38,7 +39,68 @@ hr[noshade],hr[size],hr[size],hr[width],
 iframe[marginheight],iframe[marginwidth],iframe[scrolling],iframe[frameborder],iframe[longdesc],
 object[border],object[hspace],object[vspace],
 ul[type],ol[type],li[type],area[nohref],
-br[clear]{border:1px solid #ec62f5 !important;}
+br[clear]{outline:1px solid #ec62f5 !important;}
 
-/* obsolete elements */
+/* 过时的元素 */
 applet,basefont,center,dir,font,isindex,strike,xmp,big,tt,acronym{outline:10px solid #759114 !important;}
+
+
+/********************
+  检测结果提示
+********************/
+*[style]:after,
+*[alt=""]:after,*[title=""]:after,*[class=""]:after,*[id=""]:after,a[href=""]:after,
+img:not([width]):after,
+img:not([height]):after,
+img:not([alt]):after,
+div:empty:after,span:empty:after,li:empty:after,p:empty:after,td:empty:after,th:empty:after,
+html[version]:after,
+body[alink]:after,body[link]:after,body[text]:after,body[vlink]:after,body[background]:after,body[bgcolor]:after,
+a[rev]:after,a[charset]:after,a[shape]:after,a[coords]:after,
+img[longdesc]:after,img[name]:after,img[hspace]:after,img[vspace]:after,
+object[archive]:after,object[classid]:after,object[codebase]:after,object[codetype]:after,object[declare]:after,object[standby]:after,
+table[bgcolor]:after,table[bgcolor]:after,table[width]:after,table[summary]:after,table[cellpadding]:after,table[cellspacing]:after,table[rules]:after,table[frame]:after,
+td[axis]:after,td[abbr]:after,th[axis]:after,th[abbr]:after,td[scope]:after,td[height]:after,th[height]:after,td[width]:after,th[width]:after,tr[bgcolor]:after,td[bgcolor]:after,th[bgcolor]:after,td[nowrap]:after,th[nowrap]:after,
+caption[align]:after,iframe[align]:after,img[align]:after,input[align]:after,object[align]:after,legend[align]:after,table[align]:after,hr[align]:after,div[align]:after,h1[align]:after,h2[align]:after,h3[align]:after,h4[align]:after,h5[align]:after,h6[align]:after,p[align]:after,col[align]:after,colgroup[align]:after,tbody[align]:after,td[align]:after,tfoot[align]:after,th[align]:after,thead[align]:after,tr[align]:after,
+col[valign]:after,colgroup[valign]:after,tbody[valign]:after,td[valign]:after,tfoot[valign]:after,th[valign]:after,thead[valign]:after,tr[valign]:after,
+col[width]:after,colgroup[width]:after,pre[width]:after,
+col[char]:after,colgroup[char]:after,tbody[char]:after,td[char]:after,tfoot[char]:after,th[char]:after,thead[char]:after,tr[char]:after,
+col[charoff]:after,colgroup[charoff]:after,tbody[charoff]:after,td[charoff]:after,tfoot[charoff]:after,th[charoff]:after,thead[charoff]:after,tr[charoff]:after,
+dl[compact]:after,menu[compact]:after,ol[compact]:after,ul[compact]:after,
+hr[noshade]:after,hr[size]:after,hr[size]:after,hr[width]:after,
+iframe[marginheight]:after,iframe[marginwidth]:after,iframe[scrolling]:after,iframe[frameborder]:after,iframe[longdesc]:after,
+object[border]:after,object[hspace]:after,object[vspace]:after,
+ul[type]:after,ol[type]:after,li[type]:after,area[nohref]:after,
+br[clear]:after,
+applet:after,basefont:after,center:after,dir:after,font:after,isindex:after,strike:after,xmp:after,big:after,tt:after,acronym:after{ position: absolute;left:0;top:0;background:#f00;color:#fff;z-index: 100}
+
+*[style]:after{ content:"内联样式";}
+
+*[alt=""]:after,*[title=""]:after,*[class=""]:after,*[id=""]:after,a[href=""]:after{ content:"空属性";}
+
+img:not([width]):after{content:"img标签缺少width属性";}
+img:not([height]):after{ content:"img标签缺少height属性";}
+
+img:not([alt]):after{ content:"img标签缺少alt属性";}
+
+div:empty:after,span:empty:after,li:empty:after,p:empty:after,td:empty:after,th:empty:after{ content:"空标签";}
+html[version]:after,
+body[alink]:after,body[link]:after,body[text]:after,body[vlink]:after,body[background]:after,body[bgcolor]:after,
+a[rev]:after,a[charset]:after,a[shape]:after,a[coords]:after,
+img[longdesc]:after,img[name]:after,img[hspace]:after,img[vspace]:after,
+object[archive]:after,object[classid]:after,object[codebase]:after,object[codetype]:after,object[declare]:after,object[standby]:after,
+table[bgcolor]:after,table[bgcolor]:after,table[width]:after,table[summary]:after,table[cellpadding]:after,table[cellspacing]:after,table[rules]:after,table[frame]:after,
+td[axis]:after,td[abbr]:after,th[axis]:after,th[abbr]:after,td[scope]:after,td[height]:after,th[height]:after,td[width]:after,th[width]:after,tr[bgcolor]:after,td[bgcolor]:after,th[bgcolor]:after,td[nowrap]:after,th[nowrap]:after,
+caption[align]:after,iframe[align]:after,img[align]:after,input[align]:after,object[align]:after,legend[align]:after,table[align]:after,hr[align]:after,div[align]:after,h1[align]:after,h2[align]:after,h3[align]:after,h4[align]:after,h5[align]:after,h6[align]:after,p[align]:after,col[align]:after,colgroup[align]:after,tbody[align]:after,td[align]:after,tfoot[align]:after,th[align]:after,thead[align]:after,tr[align]:after,
+col[valign]:after,colgroup[valign]:after,tbody[valign]:after,td[valign]:after,tfoot[valign]:after,th[valign]:after,thead[valign]:after,tr[valign]:after,
+col[width]:after,colgroup[width]:after,pre[width]:after,
+col[char]:after,colgroup[char]:after,tbody[char]:after,td[char]:after,tfoot[char]:after,th[char]:after,thead[char]:after,tr[char]:after,
+col[charoff]:after,colgroup[charoff]:after,tbody[charoff]:after,td[charoff]:after,tfoot[charoff]:after,th[charoff]:after,thead[charoff]:after,tr[charoff]:after,
+dl[compact]:after,menu[compact]:after,ol[compact]:after,ul[compact]:after,
+hr[noshade]:after,hr[size]:after,hr[size]:after,hr[width]:after,
+iframe[marginheight]:after,iframe[marginwidth]:after,iframe[scrolling]:after,iframe[frameborder]:after,iframe[longdesc]:after,
+object[border]:after,object[hspace]:after,object[vspace]:after,
+ul[type]:after,ol[type]:after,li[type]:after,area[nohref]:after,
+br[clear]:after{ content:"该标签使用过时的属性";}
+
+applet:after,basefont:after,center:after,dir:after,font:after,isindex:after,strike:after,xmp:after,big:after,tt:after,acronym:after{ content: "过时的元素"}
